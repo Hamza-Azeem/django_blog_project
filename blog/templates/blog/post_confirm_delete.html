@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h1>Delete Post</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        <h3> Are you sure you want to delete post {{ object.title }} ?</h3>
+        <button class='btn btn-outline-danger' type="submit"> Yes, Delete! </button>
+        <a class='btn btn-outline-secondary' href="{% url 'post-detail' post.pk %}"> Cancel </a>
+    </form>
+{% endblock %}
